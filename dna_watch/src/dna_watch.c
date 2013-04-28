@@ -173,7 +173,10 @@ void second_display_layer_update_callback(Layer *me, GContext* ctx) {
   int32_t second_angle = t.tm_sec * (0xffff/60);
   int second_hand_length = 70;
 
-  graphics_context_set_fill_color(ctx, GColorBlack);
+//  graphics_context_set_fill_color(ctx, GColorBlack);
+  graphics_context_set_stroke_color(ctx, GColorBlack);
+// graphics_context_set_text_color(GContext *ctx, GColor color);
+// graphics_context_set_compositing_mode(GContext *ctx, GCompOp mode);
 
   GPoint center = grect_center_point(&me->frame);
   GPoint second = GPoint(center.x + second_hand_length * sin_lookup(second_angle)/0xffff,
